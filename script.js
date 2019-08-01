@@ -3,7 +3,7 @@ let letra = document.querySelector("h3")
 let email = document.querySelector("#email");
 let confirm = document.querySelector("#confirm");
 let senha = document.querySelector("#senha");
-let sexo = document.querySelectorAll(".sexo");
+let sexo = document.querySelector("footer");
 let botao = document.querySelector("button");
 
 function pegarInfo(){
@@ -13,12 +13,12 @@ function pegarInfo(){
     localStorage.setItem('senha', senha.value); 
     localStorage.setItem('sexo', sexo.value); 
 
-    if(email.value === confirm.value){
+    if(email.value != "" && email.value === confirm.value){
         console.log("funfou");
         letra.innerHTML = ("");
     }
     else{
-        letra.innerHTML = ("Erro email diferente");
+        letra.innerHTML = ("Erro email diferente ou incompleto");
         console.log("erro");
     }
 }
